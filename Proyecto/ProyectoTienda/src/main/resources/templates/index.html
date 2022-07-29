@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    
+    <body>
+        <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="Index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">Tecno
+                        <span class="logo__bold">Mania</span>
+                    </h1>
+                </a>
+
+                <nav class="navegacion">
+                    <a style="color: red" th:href="@{/agregar}">Agregar Empleado</a>
+                    <a href="" class="navegacion__enlace">Catalogo Productos</a>
+                    <a href="" class="navegacion__enlace">Productos</a>
+                </nav>
+
+            </div>
+        </div>
+
+        <div class="header-texto">
+            <h2 class="no-margin"> Tienda Tecnologica</h2>
+            <p class="no-margin">Los mejores equipos y accesorios de tecnologia de Nicaragua</p>
+        </div>
+    </header>
+    <a th:href="@{/agregar}">Empleados</a>
+    <div th:if="${empleados != null and !empleados.empty}">
+        <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>    
+                <th>Cedula</th>
+                <th>Correo</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            <tr th:each="empleado : ${empleados}">
+                <td th:text="${empleado.nombre}">Mostrar Nombre</td>
+                <td th:text="${empleado.apellido}">Mostrar Apellido</td> 
+                <td th:text="${empleado.cedula}">Mostar Cedula</td>
+                <td th:text="${empleado.correo}">Mostar Correo</td>
+                 <td >  <a th:href="@{/editar/} + ${empleado.id}" th:text="Editar"></a> </td>
+                <td >  <a th:href="@{/eliminar/} + ${empleado.id}" th:text="Eliminar"></a> </td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${empleados == null or empleados.empty}">
+        Lista Vacia
+    </div>
+    </body>
+    
+</html>

@@ -1,0 +1,15 @@
+<-----------Buenas----------->
+Nota: El motivo por el cual no se mostraba la informacion del proyecto es por la forma en que fue creado, es decir al crearlo direcctamente desde spring boot
+      la dependencia de thymeleaf daba problema pero al crearlo en apache netbeans la dependecia funcionaba bien es un error bien raro y hay que tener una forma
+       correcta y clara de como se creara para evitar estos errores
+
+								Logica del trabajo: 
+
+	El proyecto creado con Spring, postgeSQL, Java fue creado desde netbeans se trabajo con estructura de capas o programacion orientada a objetos, se crearon las tablas
+	mediate el codigo, cuando se copile se crearan automaticamente estan en la carpeta "domain", tambien se creo un crud que elimina, guarda, modifica y manda a traer los datos
+	de la base de datos PostgreSQL, unicamente funciona con el catalafo de empleados pero siguiendo su misma estructura se puede realizar el catalogo de "TipoProducto"
+	de igual manera se podria modificar el codigo para que en la creacion del empreado se agrege que tipo de usuario sera en el sistema si sera un empleado comun solo
+	se ara cargo de la venta de los productos, pero si es gerente podria agregar los nuevos productos al sistema y tambien podra vender los productos, la Tabla "Producto"
+	trabajara como cualquier otro proyecto de tienda ahi se registraran las existencias y tambien ahi se podra podificar el precio de dichos productos si es necesario por 
+	eso solo un Gerente puede modificar esa tabla, en las Tablas "Ventas" y "VentasDetalle" se registrata la venta de produtos y la respectiva informacion de todos los productos
+	que se vendiero en esa compra.
