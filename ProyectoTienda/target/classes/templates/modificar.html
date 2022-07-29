@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="Index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">Tecno
+                        <span class="logo__bold">Mania</span>
+                    </h1>
+                </a>
+
+                <nav class="navegacion">
+
+                </nav>
+
+            </div>
+        </div>
+
+        <div class="header-texto">
+             <h2 class="no-margin"> Tienda Tecnologica</h2>
+            <p class="no-margin">Los mejores equipos y accesorios de tecnologia de Nicaragua</p>
+        </div>
+    </header>
+    <a th:href="@{/}">Regresar</a>
+    <br/>
+    <form th:action="@{/guardar}" method="post" th:object="${empleado}">
+        <br>
+        <input type="hidden" name="id" th:field="*{id}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" th:field="*{nombre}">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" th:field="*{apellido}">
+        
+        <label for="cedula">Cedula:</label>
+        <input type="text" name="cedula" th:field="*{cedula}">
+
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" th:field="*{correo}">
+        <br>
+        <input type="submit" name="guardar" value="guardar">
+    </form>
+
+</body>
+</html>
